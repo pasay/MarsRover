@@ -1,14 +1,13 @@
 ﻿using FluentValidation;
-using MarsRover.Business;
+using MarsRover.Business.Services;
+using MarsRover.Business.Services.Imp;
 using MarsRover.ConsoleApp.ConsolExtension;
 using MarsRover.ConsoleApp.Exceptions;
 using MarsRover.ConsoleApp.Validations;
 using MarsRover.Models;
-using MarsRover.Models.Commands;
-using MarsRover.Models.Commands.Imp;
+using MarsRover.Models.Commands.Rover;
+using MarsRover.Models.Commands.Rover.Imp;
 using MarsRover.Models.Enums;
-using MarsRover.Models.Planet;
-using MarsRover.Models.Planet.Imp;
 using MarsRover.Models.Rover.Imp;
 using MarsRover.Models.Validations;
 using System;
@@ -74,11 +73,11 @@ namespace MarsRover.ConsoleApp
             }
         }
 
-        private static IRoverCommandModel GetParameters()
+        private static IRoverCommandItemListModel GetParameters()
         {
             var upperRight = GetUpperRightInput();
             var roverCommand = GetRoverCommandInput(upperRight);
-            RoverCommandModel planet = new RoverCommandModel()
+            RoverCommandItemListModel planet = new RoverCommandItemListModel()
             {
                 RoverCommand = roverCommand,
                 UpperRight = upperRight
@@ -106,15 +105,15 @@ namespace MarsRover.ConsoleApp
             return upperRightPointModel;
         }
 
-        private static List<IRoverCommand> GetRoverCommandInput(IPointModel upperRight)
+        private static List<IRoverCommandItemModel> GetRoverCommandInput(IPointModel upperRight)
         {
-            List<IRoverCommand> roverCommandList = new List<IRoverCommand>();
+            List<IRoverCommandItemModel> roverCommandList = new List<IRoverCommandItemModel>();
 
             do
             {
                 var rover = GetRoverInput(upperRight);
                 var moveList = GetMoveListInput();
-                roverCommandList.Add(new RoverCommand() { MoveListModel = moveList, RoverModel = rover });
+                roverCommandList.Add(new RoverCommandItemModel() { MoveListModel = moveList, RoverModel = rover });
                 Consol.WriteColor(ConsoleColor.Yellow, ConsoleColor.Red, ConsoleApp.Properties.Resources.AddNewLabel);
             } while ((new List<char>() { 'Y', 'y' }).Contains((char)Console.ReadLine().Trim().First()));
 

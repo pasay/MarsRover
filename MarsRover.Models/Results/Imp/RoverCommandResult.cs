@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MarsRover.Models.Planet.Imp
+namespace MarsRover.Models.Results.Imp
 {
     public class RoverCommandResult : IRoverCommandResult
     {
