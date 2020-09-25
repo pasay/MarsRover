@@ -1,12 +1,8 @@
 ﻿using FluentValidation;
-using FluentValidation.Validators;
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
 using MarsRover.Models.Enums;
-using MarsRover.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MarsRover.ConsoleApp.Validations
 {

@@ -1,9 +1,5 @@
 ﻿using FluentValidation;
-using MarsRover.Models.Commands;
 using MarsRover.Models.Rover;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MarsRover.Models.Validations
 {

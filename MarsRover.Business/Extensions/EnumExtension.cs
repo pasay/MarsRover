@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace MarsRover.Business.Extensions
 {
@@ -21,7 +19,7 @@ namespace MarsRover.Business.Extensions
             var values = ((T[])Enum.GetValues(typeof(T))).ToList();
             var index = values.IndexOf(value) - 1;
             if (index < 0)
-                index = values.Count -1;
+                index = values.Count - 1;
 
             return values[index];
         }

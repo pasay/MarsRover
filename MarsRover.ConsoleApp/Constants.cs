@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MarsRover.ConsoleApp
+﻿namespace MarsRover.ConsoleApp
 {
     public static class Constants
     {

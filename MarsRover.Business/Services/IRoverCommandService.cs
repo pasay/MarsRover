@@ -1,10 +1,7 @@
-﻿using MarsRover.Models.Commands;
-using MarsRover.Models.Commands.Rover;
+﻿using MarsRover.Models.Commands.Rover;
 using MarsRover.Models.Enums;
 using MarsRover.Models.Results;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MarsRover.Business.Services
 {

@@ -1,10 +1,6 @@
 ﻿using FluentValidation;
-using FluentValidation.Validators;
 using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
 
 namespace MarsRover.ConsoleApp.Validations
 {
