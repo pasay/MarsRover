@@ -23,7 +23,9 @@ namespace MarsRover.ConsoleApp.Validations
         {
             var values = arg.ToCharArray().ToList();
             if (values.Count == 0)
+            { 
                 return false;
+            }
 
             return values.All(p => MoveTypeEnumList.Contains(p.ToString().ToUpperInvariant()));
         }

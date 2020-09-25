@@ -2,7 +2,7 @@
 {
     public class ErrorCodes
     {
-        public const string RETRY = "retry";
-        public const string EXIT = "exit";
+        public static readonly string RETRY = "retry";
+        public static readonly string EXIT = "exit";
     }
 }

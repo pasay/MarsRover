@@ -23,7 +23,9 @@ namespace MarsRover.ConsoleApp.Validations
         {
             var values = arg.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToList();
             if (values.Count != 3)
+            {
                 return false;
+            }
 
             return values.Take(2).All(p => int.TryParse(p, out _))
                 && values.Take(2).All(p => int.Parse(p) >= 0)

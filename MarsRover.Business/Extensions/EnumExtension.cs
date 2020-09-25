@@ -10,7 +10,9 @@ namespace MarsRover.Business.Extensions
             var values = ((T[])Enum.GetValues(typeof(T))).ToList();
             var index = values.IndexOf(value) + 1;
             if (index >= values.Count)
+            {
                 index = 0;
+            }
 
             return values[index];
         }
@@ -19,7 +21,9 @@ namespace MarsRover.Business.Extensions
             var values = ((T[])Enum.GetValues(typeof(T))).ToList();
             var index = values.IndexOf(value) - 1;
             if (index < 0)
+            {
                 index = values.Count - 1;
+            }
 
             return values[index];
         }

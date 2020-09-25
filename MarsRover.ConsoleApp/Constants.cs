@@ -2,7 +2,7 @@
 {
     public static class Constants
     {
-        public const string EXIT = "exit";
-        public const string START = "start";
+        public static readonly string EXIT = "exit";
+        public static readonly string START = "start";
     }
 }

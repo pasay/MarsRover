@@ -24,19 +24,19 @@ namespace MarsRover.Business.Services.Imp
             List<IRoverCommandResult> result = new List<IRoverCommandResult>();
             List<IRoverCommandResult> resultOutput = new List<IRoverCommandResult>()
             {
-                new RoverCommandResult() { VerboseType = Models.Enums.ResultType.Warn, Verbose = $"\r\n\r\n[____________OUTPUT____________]" }
+                new RoverCommandResult { VerboseType = Models.Enums.ResultType.Warn, Verbose = $"\r\n\r\n[____________OUTPUT____________]" }
             };
             foreach (var rover in RoverCommandItemListModel.RoverCommand)
             {
-                result.Add(new RoverCommandResult() { VerboseType = Models.Enums.ResultType.Success, Verbose = $"Rover([{rover.RoverModel.ToString()}]) started." });
+                result.Add(new RoverCommandResult{ VerboseType = Models.Enums.ResultType.Success, Verbose = $"Rover([{rover.RoverModel.ToString()}]) started." });
                 var roverModel = rover.RoverModel.Clone();
                 foreach (var moveItem in rover.MoveListModel)
                 {
                     result.Add(Move(rover, moveItem));
                 }
 
-                result.Add(new RoverCommandResult() { VerboseType = Models.Enums.ResultType.Success, Verbose = $"Rover([{roverModel.ToString()}]) movement finished. Rover last position: [{rover.RoverModel.ToString()}]" });
-                resultOutput.Add(new RoverCommandResult() { VerboseType = Models.Enums.ResultType.Success, Verbose = $"Rover([{roverModel.ToString()}]) -> [{rover.RoverModel.ToString()}]" });
+                result.Add(new RoverCommandResult{ VerboseType = Models.Enums.ResultType.Success, Verbose = $"Rover([{roverModel.ToString()}]) movement finished. Rover last position: [{rover.RoverModel.ToString()}]" });
+                resultOutput.Add(new RoverCommandResult{ VerboseType = Models.Enums.ResultType.Success, Verbose = $"Rover([{roverModel.ToString()}]) -> [{rover.RoverModel.ToString()}]" });
             }
 
             result.AddRange(resultOutput);
@@ -45,7 +45,7 @@ namespace MarsRover.Business.Services.Imp
 
         public IRoverCommandResult Move(IRoverCommandItemModel rover, MoveType moveItem)
         {
-            IRoverCommandResult roverCommandResult = new RoverCommandResult() { VerboseType = ResultType.Success, Verbose = $"The movement of the rover([{rover.RoverModel.ToString()}]) for [{moveItem.ToString()}]." };
+            IRoverCommandResult roverCommandResult = new RoverCommandResult{ VerboseType = ResultType.Success, Verbose = $"The movement of the rover([{rover.RoverModel.ToString()}]) for [{moveItem.ToString()}]." };
             var newRoverModel = rover.RoverModel.Clone();
             switch (moveItem)
             {

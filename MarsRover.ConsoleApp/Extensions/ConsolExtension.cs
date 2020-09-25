@@ -45,7 +45,9 @@ namespace MarsRover.ConsoleApp.ConsolExtension
                 }
 
                 if (newLine)
-                    Console.WriteLine();
+                {
+                    Console.WriteLine("");
+                }
             }
             finally
             {
