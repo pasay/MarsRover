@@ -51,11 +51,9 @@ namespace MarsRover.Business.Services.Imp
             switch (moveItem)
             {
                 case MoveType.L:
-                    //newRoverModel.Direction = (DirectionType)(((((int)newRoverModel.Direction) - 1) + 4) % 4);
                     newRoverModel.Direction = newRoverModel.Direction.PreviousValue();
                     break;
                 case MoveType.R:
-                    //newRoverModel.Direction = (DirectionType)((((int)newRoverModel.Direction) + 1) % 4);
                     newRoverModel.Direction = newRoverModel.Direction.NextValue();
                     break;
                 case MoveType.M:
