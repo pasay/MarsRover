@@ -24,7 +24,7 @@ namespace MarsRover.ConsoleApp.Validations
             }
 
             return values.All(p => int.TryParse(p, out _))
-                && values.Take(2).All(p => int.Parse(p) >= 0);
+                && values.Take(2).All(p => int.Parse(p) > 0);
         }
     }
 }
