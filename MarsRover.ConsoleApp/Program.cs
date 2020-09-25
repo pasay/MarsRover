@@ -16,7 +16,7 @@ using System.Linq;
 
 namespace MarsRover.ConsoleApp
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
@@ -77,7 +77,7 @@ namespace MarsRover.ConsoleApp
         {
             var upperRight = GetUpperRightInput();
             var roverCommand = GetRoverCommandInput(upperRight);
-            RoverCommandItemListModel planet = new RoverCommandItemListModel()
+            RoverCommandItemListModel planet = new RoverCommandItemListModel
             {
                 RoverCommand = roverCommand,
                 UpperRight = upperRight
@@ -98,7 +98,7 @@ namespace MarsRover.ConsoleApp
                 upperRightCoordinateInput = Console.ReadLine().Trim();
             } while (CommonValidateInfo(validator, upperRightCoordinateInput));
 
-            var values = upperRightCoordinateInput.Trim().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            string[] values = upperRightCoordinateInput.Trim().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
             upperRightPointModel.X = Convert.ToInt32(values[0]);
             upperRightPointModel.Y = Convert.ToInt32(values[1]);
 
@@ -135,7 +135,7 @@ namespace MarsRover.ConsoleApp
                     rectangleRoverInput = Console.ReadLine().Trim();
                 } while (CommonValidateInfo(validator, rectangleRoverInput));
 
-                var values = rectangleRoverInput.Trim().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                string[] values = rectangleRoverInput.Trim().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
                 rectangleRoverModel.X = Convert.ToInt32(values[0]);
                 rectangleRoverModel.Y = Convert.ToInt32(values[1]);
                 rectangleRoverModel.Direction = Enum.Parse<DirectionType>(values[2].ToUpperInvariant());
@@ -190,7 +190,7 @@ namespace MarsRover.ConsoleApp
         private static bool IsRestart()
         {
             Consol.WriteColor(ConsoleColor.Yellow, ConsoleColor.Red, ConsoleApp.Properties.Resources.TryAgain);
-            return (new List<char> { 'Y', 'y' }).Contains((char)Console.ReadKey().KeyChar);
+            return (new List<char> { 'Y', 'y' }).Contains(Console.ReadKey().KeyChar);
         }
     }
 }

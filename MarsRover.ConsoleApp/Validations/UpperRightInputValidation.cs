@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace MarsRover.ConsoleApp.Validations
@@ -17,7 +18,7 @@ namespace MarsRover.ConsoleApp.Validations
 
         private bool CustomValidator(string arg)
         {
-            var values = arg.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            List<string> values = arg.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToList();
             if (values.Count != 2)
             {
                 return false;

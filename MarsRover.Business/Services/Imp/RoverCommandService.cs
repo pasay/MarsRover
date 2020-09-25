@@ -22,7 +22,7 @@ namespace MarsRover.Business.Services.Imp
         public List<IRoverCommandResult> Run()
         {
             List<IRoverCommandResult> result = new List<IRoverCommandResult>();
-            List<IRoverCommandResult> resultOutput = new List<IRoverCommandResult>()
+            List<IRoverCommandResult> resultOutput = new List<IRoverCommandResult>
             {
                 new RoverCommandResult { VerboseType = Models.Enums.ResultType.Warn, Verbose = $"\r\n\r\n[____________OUTPUT____________]" }
             };
