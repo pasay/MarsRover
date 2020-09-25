@@ -23,7 +23,7 @@ namespace MarsRover.ConsoleApp.Validations
         {
             var values = arg.ToCharArray().ToList();
             if (values.Count == 0)
-            { 
+            {
                 return false;
             }
 

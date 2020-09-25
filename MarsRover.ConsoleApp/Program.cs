@@ -61,7 +61,7 @@ namespace MarsRover.ConsoleApp
 
                 } while (IsRestart());
             }
-            catch (ExitException) {}
+            catch (ExitException) { }
             catch (Exception ex)
             {
                 Consol.WriteLineColor(ConsoleColor.Red, $"Unhandled exception. [Error: {ex.Message}]");
@@ -113,9 +113,9 @@ namespace MarsRover.ConsoleApp
             {
                 var rover = GetRoverInput(upperRight);
                 var moveList = GetMoveListInput();
-                roverCommandList.Add(new RoverCommandItemModel{ MoveListModel = moveList, RoverModel = rover });
+                roverCommandList.Add(new RoverCommandItemModel { MoveListModel = moveList, RoverModel = rover });
                 Consol.WriteColor(ConsoleColor.Yellow, ConsoleColor.Red, ConsoleApp.Properties.Resources.AddNewLabel);
-            } while ((new List<char>{ 'Y', 'y' }).Contains((char)Console.ReadLine().Trim().First()));
+            } while ((new List<char> { 'Y', 'y' }).Contains((char)Console.ReadLine().Trim().First()));
 
             return roverCommandList;
         }
@@ -190,7 +190,7 @@ namespace MarsRover.ConsoleApp
         private static bool IsRestart()
         {
             Consol.WriteColor(ConsoleColor.Yellow, ConsoleColor.Red, ConsoleApp.Properties.Resources.TryAgain);
-            return (new List<char>{ 'Y', 'y' }).Contains((char)Console.ReadKey().KeyChar);
+            return (new List<char> { 'Y', 'y' }).Contains((char)Console.ReadKey().KeyChar);
         }
     }
 }
